@@ -8,10 +8,16 @@
             <search string='Search Properties'>
                 <field name='name' />
                 <field name='postcode' />
-                <field name='expected_price'/>
-                <field name='bedrooms'/>
-                <field name='living_area'/>
-                <field name='facades'/>
+                <field name='expected_price' />
+                <field name='bedrooms' />
+                <field name='living_area' />
+                <field name='facades' />
+                <filter string='New' name='new' domain="[('state', '=like', 'new')]" />
+                <filter string='Offer Received' name='offer_received'
+                    domain="[('state', '=like','offer_received')]" />
+                <group>
+                    <filter string='Postcode' name='postcode' context="{'group_by': 'postcode'}" />
+                </group>
             </search>
         </field>
     </record>
@@ -45,6 +51,7 @@
                     </div>
                     <group>
                         <group>
+                            <field name='property_type_id'/>
                             <field name='postcode' />
                             <field name='date_availability' />
                         </group>
@@ -56,14 +63,20 @@
                     <notebook>
                         <page string='Description'>
                             <group>
-                                <field name='description' />
-                                <field name='bedrooms' />
-                                <field name='living_area' />
-                                <field name='facades' />
-                                <field name='garage' />
-                                <field name='garden' />
-                                <field name='garden_area' />
-                                <field name='garden_orientation' />
+                                <group>
+                                    <field name='description' />
+                                    <field name='bedrooms' />
+                                    <field name='living_area' />
+                                    <field name='facades' />
+                                    <field name='garage' />
+                                </group>
+                                <group>
+                                    <field name='garden' />
+                                    <field name='garden_area' />
+                                    <field name='garden_orientation' />
+                                    <field name='state' />
+                                    <field name='active' />
+                                </group>
                             </group>
                         </page>
                     </notebook>

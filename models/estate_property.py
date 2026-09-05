@@ -6,6 +6,7 @@ class EstateProperty(models.Model):
     _description = "test property of real estate"
 
     name = fields.Char("Title", required=True)
+    property_type_id = fields.Many2one('estate.property.type')
     description = fields.Text()
     postcode = fields.Char()
     date_availability = fields.Date(
