@@ -14,7 +14,7 @@ class EstateProperty(models.Model):
         default=lambda self: fields.Datetime.add(fields.Datetime.now(), months=3),
     )
     expected_price = fields.Float()
-    selling_price = fields.Float(required=True, readonly=True, copy=False)
+    selling_price = fields.Float(readonly=True, copy=False)
     bedrooms = fields.Integer(default=2)
     living_area = fields.Integer("Living Area (sqm)")
     facades = fields.Integer()
