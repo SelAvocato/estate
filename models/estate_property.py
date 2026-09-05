@@ -5,11 +5,11 @@ class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "test property of real estate"
 
-    name = fields.Char(required=True)
+    name = fields.Char("Title", required=True)
     description = fields.Text()
     postcode = fields.Char()
     date_availability = fields.Date(
-        "Available Date",
+        "Available From",
         copy=False,
         default=lambda self: fields.Datetime.add(fields.Datetime.now(), months=3),
     )
