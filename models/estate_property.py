@@ -25,3 +25,11 @@ class EstateProperty(models.Model):
             ("west", "West"),
         ]
     )
+    active = fields.Boolean()
+    state = fields.Selection(
+        selection=[
+            ('new', 'New'),
+            ('offer_received', 'Offer Received')
+        ],
+        default='new'
+    )
