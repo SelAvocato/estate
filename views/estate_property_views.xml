@@ -72,6 +72,7 @@
                                     <field name='living_area' />
                                     <field name='facades' />
                                     <field name='garage' />
+                                    <field name='total_area' />
                                 </group>
                                 <group>
                                     <field name='garden' />
